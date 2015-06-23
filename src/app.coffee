@@ -1,6 +1,6 @@
 
 class AppController
-  constructor: () ->
+  constructor: (@interval) ->
     ctrl = @
 
     ctrl.entries = [
@@ -22,8 +22,14 @@ class AppController
       }
     ]
 
+    @interval ->
+      ctrl.now = new Date()
+    , 1000
 
-AppController.$inject = []
+
+
+
+AppController.$inject = ['$interval']
 
 
 angular.module "planck", []
