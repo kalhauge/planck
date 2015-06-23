@@ -1,10 +1,18 @@
 doctype html
-html(lang="en")
+html(lang="en", ng-app="planck")
     head
         title="Planck"
-        link(rel='stylesheet', href='index.css')
-    body
+        link(rel='stylesheet', href='css/index.css')
+        link(rel='stylesheet', href='node_modules/bootstrap/dist/css/bootstrap.css')
+        script(src="node_modules/angular/angular.min.js")
+    body(ng-controller="AppController as ctrl")
         .container
             h1 Planck
+            #sheet 
+                .entry.row(ng-repeat="entry in ctrl.entries")
+                    .time.col-sm-4.text-right(ng-bind="entry.time | date: 'HH:mm'")
+                    .note.col-sm-8
+                        .title(ng-bind="entry.title")
+                        .note(ng-bind="comment", ng-repeat="comment in entry.comments")
         script(src="js/app.js")
 

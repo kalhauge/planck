@@ -1,0 +1,33 @@
+{
+  "name": "planck",
+  "version": "1.0.0",
+  "description": "Planck messures your time in the shortest possible intervals",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "bootstrap": "^3.3.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-jade": "^0.14.1",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalhauge/planck.git"
+  },
+  "keywords": [
+    "time",
+    "mananger"
+  ],
+  "author": "Christian Kalhauge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalhauge/planck/issues"
+  },
+  "homepage": "https://github.com/kalhauge/planck#readme"
+}
