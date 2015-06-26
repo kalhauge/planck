@@ -1,0 +1,24 @@
+doctype html
+html(lang="en", ng-app="planck")
+  
+  head
+    title="Planck"
+    link(rel='stylesheet', href='css/index.css')
+    link(rel='stylesheet', href='css/bootstrap.css')
+    script(src="js/angular.min.js")
+      
+  body(ng-controller="AppController as ctrl")
+    .container
+    h1 Planck
+    #sheet 
+    .entry.row(ng-repeat="entry in ctrl.entries")
+      .time.col-sm-4.text-right(ng-bind="entry.time | date: 'HH:mm'")
+      .note.col-sm-8
+        .title(ng-bind="entry.title")
+        ul
+          li.note(ng-bind="comment", ng-repeat="comment in entry.comments")
+
+    .entry.row
+      .time.col-sm-4.text-right(ng-bind="ctrl.now | date: 'HH:mm'")
+    script(src="js/app.js")
+
